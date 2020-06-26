@@ -6,6 +6,7 @@
     <title>Weather Dashboard</title>
 
     <link rel="styleSheet" href="./Assets/style.css">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -17,97 +18,103 @@
         <p class="lead text-center" id="dateDisplay"></p>
     </div>
 
-    <div class="container-fluid" id="heading">
+    <div class="container-fluid">
         <div class="row">
-            <h5 class="font-weight-bold">Search by City</h5>
-            <input type="text" id="city" placeholder="Enter City">
-        </div>
-        <button class="btn btn-secondary" id="submit">Submit</button>
-    </div>
-    <div class="row" id="citiesDiv">
-        <table class="table">
-            <thead>
-                <tr id="tableHead">
-                    <th scope="col" id="recent">Recent Searches</th>
-                </tr>
-            </thead>
-            <tbody id="tbody"></tbody>
-        </table>
-    </div>
-    </div>
+            <div class="col-sm-3" id="searches">
+                <div class="row">
+                    <h4 class="font-weight-bold">Search by City</h4>
+                    <input type="text" id="city" placeholder="Enter a City"></input>
+                    <button class="btn btn-secondary" id="search">Search</button>
+                </div>
+                <div class="row" id="citiesDiv">
 
-    <div class="col-sm-9" id="weatherInfo">
-        <div class="row" id="todaysWeather">
-            <div class="col-sm" id="dailyWeatherDiv">
-                <h2>Today's Weather Forcast</h2>
-                <div id="lowDiv"></div>
-                <div id="highDiv"></div>
-                <div id="humidity"></div>
-                <div id="windSpeed"></div>
-                <div id="description"></div>
-            </div>
-        </div>
+                    <table class="table">
+                        <thead>
 
-        <div class="row">
-            <h2 id="fiveDayForecast" class="text-center">5-Day Forecast</h2>
-        </div>
-        <div class="row fiveDay">
-            <div class="col-sm card-deck">
-                <div id="day1" class="col-sm-2 card text-white bg-primary mb-3">
-                    <h5 id="day4_date"></h5>
-                    <h4 id="day4_temp"></h4>
-                    <img src="" id="icon4">
-                    <div id="day4_humidity"></div>
-                    <div id="day4_wind"></div>
-                </div>
-                <div id="day2" class="col-sm-2 card text-white bg-primary mb-3">
-                    <h5 id="day12_date"></h5>
-                    <h4 id="day12_temp"></h4>
-                    <img src="" id="icon12">
-                    <div id="day12_humidity"></div>
-                    <div id="day12_wind"></div>
-                </div>
-                <div id="day3" class="col-sm-2 card text-white bg-primary mb-3">
-                    <h5 id="day20_date"></h5>
-                    <h4 id="day20_temp"></h4>
-                    <img src="" id="icon20">
-                    <div id="day20_humidity"></div>
-                    <div id="day20_wind"></div>
-                </div>
-                <div id="day4" class="col-sm-2 card text-white bg-primary mb-3">
-                    <h5 id="day28_date"></h5>
-                    <h4 id="day28_temp"></h4>
-                    <img src="" id="icon28">
-                    <div id="day28_humidity"></div>
-                    <div id="day28_wind"></div>
-                </div>
-                <div id="day5" class="col-sm-2 card text-white bg-primary mb-3">
-                    <h5 id="day36_date"></h5>
-                    <h4 id="day36_temp"></h4>
-                    <img src="" id="icon36">
-                    <div id="day36_humidity"></div>
-                    <div id="day36_wind"></div>
+                            <tr id="tableHead">
+                                <th scope="col" id="recent">Recent searches</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+
+                        </tbody>
+                    </table>
+
+
+
                 </div>
             </div>
-        </div>
 
+            <div class="col-sm-9" id="weatherInfo">
+                <div class="row" id="todaysWeather">
+                    <div class="col-sm" id="dailyWeatherDiv">
+                        <h2>Today's Forecast</h2>
+                        <div id="lowDiv"></div>
+                        <div id="highDiv"></div>
+                        <div id="humidity"></div>
+                        <div id="windSpeed"></div>
+                        <div id="description"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <h2 id="fiveDayForecast" class="text-center">5-Day Forecast</h2>
+                </div>
+                <div class="row fiveDay">
+                    <div class="col-sm card-deck">
+                        <div id="day1" class="col-md-2 card text-white bg-dark mb-3">
+                            <h5 id="day3_date"></h5>
+                            <h4 id="day3_temp"></h4>
+                            <img src="" id="icon3">
+                            <div id="day3highLow"></div>
+                            <div id="day3_humidity"></div>
+                            <div id="day3_wind"></div>
+                        </div>
+                        <div id="day2" class="col-md-2 card text-white bg-dark mb-3">
+                            <h5 id="day11_date"></h5>
+                            <h4 id="day11_temp"></h4>
+                            <img src="" id="icon11">
+                            <div id="day11_humidity"></div>
+                            <div id="day11_wind"></div>
+                        </div>
+                        <div id="day3" class="col-md-2 card text-white bg-dark mb-3">
+                            <h5 id="day19_date"></h5>
+                            <h4 id="day19_temp"></h4>
+                            <img src="" id="icon19">
+                            <div id="day19_humidity"></div>
+                            <div id="day19_wind"></div>
+                        </div>
+                        <div id="day4" class="col-md-2 card text-white bg-dark mb-3">
+                            <h5 id="day27_date"></h5>
+                            <h4 id="day27_temp"></h4>
+                            <img src="" id="icon27">
+                            <div id="day27_humidity"></div>
+                            <div id="day27_wind"></div>
+                        </div>
+                        <div id="day5" class="col-md-2 card text-white bg-dark mb-3">
+                            <h5 id="day35_date"></h5>
+                            <h4 id="day35_temp"></h4>
+                            <img src="" id="icon35">
+                            <div id="day35_humidity"></div>
+                            <div id="day35_wind"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-
-
-
-    <script src="./Assets/script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="Assets/script.js"></script>
 
 </body>
 
