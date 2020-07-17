@@ -117,13 +117,14 @@ $(document).ready(function () {
 
             lowTempFaren = Math.floor(((response.main.temp_min - 273.15) * 1.8) + 32);
             highTempFaren = Math.floor(((response.main.temp_min - 273.15) * 1.8) + 32);
+            weather_icon = response.weather[0].icon + ".png";
 
             $("#lowDiv").text("Low of: " + lowTempFaren + "°F");
             $("#highDiv").text("High of: " + highTempFaren + "°F");
             $("#humidity").text("Humidity: " + response.main.humudity + "%");
             $("#windSpeed").text("Wind Speed: " + response.wind.speed + "MPH");
             $("#description").text("Today's Weather: " + response.weather[0].description);
-            weather_icon = response.weather[0].icon + ".png"
+            $("#curWeatherIcon").attr(weather_icon);
             $("#cityHeader").text(response.name);
 
 
@@ -147,7 +148,6 @@ $(document).ready(function () {
                 var dayHumidity = result.list[newDate].main.humidity;
                 var dayWindSpeed = result.list[newDate].wind.speed;
                 var dayIcon = result.list[newDate].weather[0].icon;
-
                 var dayLow = result.list[newDate].main.temp_min;
                 var dayHigh = result.list[newDate].main.temp_max;
                 var dayLowFaren = Math.floor(((dayLow - 273.15) * 1.8) + 32);
@@ -160,7 +160,7 @@ $(document).ready(function () {
                 $("#day" + newDate + "_wind").attr("class", "windText");
                 $("#day" + newDate + "_wind").text("Wind: " + dayWindSpeed + " MPH");
                 $("#icon" + newDate).attr("src", "http://openweathermap.org/img/w/" + dayIcon + ".png");
-                $("#day" + newDate + "highLow").text("Low " + dayLowFaren + "°F / High " + dayHighFaren + "°F");
+                $("#day" + newDate + "_highLow").attr("Low " + dayLowFaren + "°F");
             };
 
             $("#weatherInfo").attr("style", "display: block");

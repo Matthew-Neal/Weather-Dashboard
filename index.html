@@ -6,17 +6,17 @@
     <title>Weather Dashboard</title>
 
     <link rel="styleSheet" href="./Assets/style.css">
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="jumbotron jumbotron-fluid" id="heading">
-        <h1 class="display-4 text-center" id="docHeading">Weather Dashboard</h1>
-        <h2 id="cityHeader" class="text-center"></h2>
-        <p class="lead text-center" id="dateDisplay"></p>
-    </div>
+    <Header class="hero-image" id="heading">
+        <h1 class="hero-text" id="docHeading">Weather Dashboard</h1>
+        <p id="cityHeader" class="hero-text"></p>
+        <p class="hero-text" id="dateDisplay"></p>
+    </Header>
 
     <div class="container-fluid">
         <div class="row">
@@ -48,7 +48,9 @@
             <div class="col-sm-9" id="weatherInfo">
                 <div class="row" id="todaysWeather">
                     <div class="col-sm" id="dailyWeatherDiv">
-                        <h2>Today's Forecast</h2>
+                        <h2>Today's Forecast
+                            <div id="curWeatherIcon"></div>
+                        </h2>
                         <div id="lowDiv"></div>
                         <div id="highDiv"></div>
                         <div id="humidity"></div>
@@ -65,7 +67,7 @@
                             <h5 id="day3_date"></h5>
                             <h4 id="day3_temp"></h4>
                             <img src="" id="icon3">
-                            <div id="day3highLow"></div>
+                            <div id="day3_highLow"></div>
                             <div id="day3_humidity"></div>
                             <div id="day3_wind"></div>
                         </div>
@@ -73,6 +75,7 @@
                             <h5 id="day11_date"></h5>
                             <h4 id="day11_temp"></h4>
                             <img src="" id="icon11">
+                            <div id="day11_highLow"></div>
                             <div id="day11_humidity"></div>
                             <div id="day11_wind"></div>
                         </div>
@@ -80,6 +83,7 @@
                             <h5 id="day19_date"></h5>
                             <h4 id="day19_temp"></h4>
                             <img src="" id="icon19">
+                            <div id="day19_highLow"></div>
                             <div id="day19_humidity"></div>
                             <div id="day19_wind"></div>
                         </div>
@@ -87,6 +91,7 @@
                             <h5 id="day27_date"></h5>
                             <h4 id="day27_temp"></h4>
                             <img src="" id="icon27">
+                            <div id="day27_highLow"></div>
                             <div id="day27_humidity"></div>
                             <div id="day27_wind"></div>
                         </div>
@@ -94,6 +99,7 @@
                             <h5 id="day35_date"></h5>
                             <h4 id="day35_temp"></h4>
                             <img src="" id="icon35">
+                            <div id="day35_highLow"></div>
                             <div id="day35_humidity"></div>
                             <div id="day35_wind"></div>
                         </div>
